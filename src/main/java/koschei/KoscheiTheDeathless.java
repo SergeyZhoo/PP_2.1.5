@@ -7,14 +7,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class KoscheiTheDeathless {
 
-    private Ocean1 ocean;
-
-    public String getRulesByDeth() {
-        return "На свете есть океан , " + ocean.toString();
-    }
+    private final Ocean1 ocean;
 
     @Autowired
-    public void setOcean(Ocean1 ocean) {
+    public KoscheiTheDeathless(Ocean1 ocean) {
         this.ocean = ocean;
+    }
+
+    public String getRulesByDeth() {
+        return "На свете есть океан, " + ocean.toString();
     }
 }
